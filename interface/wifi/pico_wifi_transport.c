@@ -1,39 +1,11 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "../common/transport_common.h"
+#include "../common/board.h"
+#ifndef PICO
 
-#include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
 
 #include "lwip/pbuf.h"
 #include "lwip/udp.h"
-
-#include <uxr/client/profile/transport/custom/custom_transport.h>
-
-struct micro_ros_agent_locator
-{
-    ip_addr_t address;
-    int port;
-};
-
-struct transport_buffer
-{
-    uint8_t *buf;
-    bool packet_received;
-};
-
-void usleep(uint64_t us)
-{
-    sleep_us(us);
-}
-
-int clock_gettime(clockid_t unused, struct timespec *tp)
-{
-    uint64_t m = time_us_64();
-    tp->tv_sec = m / 1000000;
-    tp->tv_nsec = (m % 1000000) * 1000;
-    return 0;
-}
 
 static struct udp_pcb *pcb;
 
@@ -106,3 +78,5 @@ size_t pico_wifi_transport_read(struct uxrCustomTransport *transport, uint8_t *b
 
     return (elapsed_time_us < 0) ? 0 : len;
 }
+
+#endif

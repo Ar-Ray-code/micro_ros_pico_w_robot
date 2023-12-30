@@ -1,6 +1,21 @@
 ![banner](.images/banner-dark-theme.png#gh-dark-mode-only)
 ![banner](.images/banner-light-theme.png#gh-light-mode-only)
 
+## Support (NITK.K ROS-Team)
+
+| distro | status |
+| --- | --- |
+| Humble | ✅ |
+| Iron | |
+
+| board | type | status |
+| --- | --- | --- |
+| pico | uart | - |
+| pico+W5500 | Ethernet | |
+| pico w | uart | ✅ |
+| pico w | Wi-Fi | ✅ |
+| pico w+W5500 | Ethernet | |
+
 # micro-ROS module for Raspberry Pi Pico SDK
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
