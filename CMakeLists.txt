@@ -20,6 +20,7 @@ add_executable(main
 target_link_libraries(main
     pico_stdlib
     microros
+    hardware_pwm
 )
 
 target_include_directories(main PUBLIC
